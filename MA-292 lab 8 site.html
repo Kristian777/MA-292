@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MA-292 Lab Assignments - Lab 8</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./MA-292 lab 7 site.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="MA-292 Lab Assignments - Lab 8">
+<meta property="og:description" content="">
+<meta property="og:site-name" content="MA-292 Lab Assignments">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./MA-292 lab 1 site.html">Labs - Problems</a></li><li class="breadcrumb-item"><a href="./MA-292 lab 8 site.html">Lab 8 - Problems</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./images/wordcloud.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Site overview</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Labs - Problems</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 1 site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1 - Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 2 site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2 - Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 3 site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3 - Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 4 site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4 - Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 5 site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5 - Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 6 site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6 - Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 7 site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7 - Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 8 site.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 8 - Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Labs - Solutions</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 1 site - with solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1 - Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 2 site - with solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2 - Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 3 site - with solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3 - Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 4 site - with solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4 - Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 5 site - with solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5 - Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 6 site - with solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 6 - Solutions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MA-292 lab 7 site - with solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7 - Solutions</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link active" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 8</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Please note that there is a file on Canvas called <a href="https://canvas.swansea.ac.uk/courses/46326/modules" class="external" target="_blank"><strong>Getting started with R</strong></a> which may be of some use. This provides details of setting up R and Rstudio on your own computer as well as providing an overview of inputting and importing various data files into R. This should mainly serve as a reminder.</p>
+<p>Recall that we can clear the environment using <code>rm(list=ls())</code> It is advisable to do this before attempting new questions if confusion may arise with variable names etc.</p>
+<section id="exercise-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-1">Exercise 1</h3>
+<p>Let <span class="math inline">\(X\sim Bin(10,0.4)\)</span>. Calculate the following. The <code>help("pbinom")</code> function may be of use.</p>
+<ul>
+<li><p>Find <span class="math inline">\(P(X=2)\)</span>.</p></li>
+<li><p>Now we use the distribution function <code>pbinom</code> to find <span class="math inline">\(P(X&lt;5)\)</span>.</p></li>
+<li><p>Generate 30 random values from <span class="math inline">\(Bin(20,0.1)\)</span>.</p></li>
+<li><p>Plot the Probability Mass Function (PMF) of <span class="math inline">\(Bin(15,0.3)\)</span>. <strong>Hint:</strong> create a sequence of numbers (inputs) between 1 and 15 and then find the corresponding values of the distribution function (PMF in this case). Finally, we plot these against each other.</p></li>
+</ul>
+</section>
+<section id="example-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="example-1">Example 1</h3>
+<p>In this example we will use the logistic regression procedure on the <strong>Logistic Regression (Quality)</strong> dataset. This dataset has a number of variables related to the quality of care. We firstly assume that we have independence of observations. Further remarks about assumptions will be made in the steps below. Please follow the steps below.</p>
+<ul>
+<li><p>The first model we will consider is where <strong>PoorCare</strong> is the dependent variable and <strong>AcuteDrugGapSmall</strong> is the independent variable. Note that PoorCare is a binary variable, satisfying an assumption of the procedure. Inspection of AcuteDrugGapSmall indicates the variable can be treated as continuous; therefore a further assumption is satisfied. We do not need to consider multicollinearity in this case as we only have one independent variable. The final assumption is linearity in the sense that Logit(PoorCare) and AcuteDrugGapSmall should be linearly related - we assume that this is true in this case.</p></li>
+<li><p>We firstly import and check the data:</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreign)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Quality<span class="ot">&lt;-</span><span class="fu">read.spss</span>(<span class="fu">file.choose</span>(), <span class="at">to.data.frame =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-2_55c5c40acc3511a43ae2677448e4716f">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Quality)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  MemberID InpatientDays ERVisits OfficeVisits Narcotics DaysSinceLastERVisit
+1        1             0        0           18         1                  731
+2        2             1        1            6         1                  411
+3        3             0        0            5         3                  731
+4        4             0        1           19         0                  158
+5        5             8        2           19         3                  449
+6        6             2        0            9         2                  731
+  Pain TotalVisits ProviderCount MedicalClaims ClaimLines StartedOnCombination
+1   10          18            21            93        222                    0
+2    0           8            27            19        115                    0
+3   10           5            16            27        148                    0
+4   34          20            14            59        242                    0
+5   10          29            24            51        204                    0
+6    6          11            40            53        156                    0
+  AcuteDrugGapSmall PoorCare
+1                 0        0
+2                 1        0
+3                 5        0
+4                 0        0
+5                 0        0
+6                 4        1</code></pre>
+</div>
+</div>
+<ul>
+<li>We now fit the model.</li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-3_f2123ca228dcb637863146d032afc8ea">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>QualityLogit<span class="ot">&lt;-</span><span class="fu">glm</span>(PoorCare<span class="sc">~</span>AcuteDrugGapSmall, <span class="at">data=</span>Quality, <span class="at">family=</span><span class="st">"binomial"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(QualityLogit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = PoorCare ~ AcuteDrugGapSmall, family = "binomial", 
+    data = Quality)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.8704  -0.6252  -0.5555  -0.2776   1.9724  
+
+Coefficients:
+                  Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -1.79086    0.28220  -6.346 2.21e-10 ***
+AcuteDrugGapSmall  0.25762    0.06451   3.994 6.50e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 147.88  on 130  degrees of freedom
+Residual deviance: 124.54  on 129  degrees of freedom
+AIC: 128.54
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+<ul>
+<li>We begin to evaluate it using Deviance and Wald chi-square statistics:</li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-4_348a01e309f27488f921f7e36ff3f82b">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(QualityLogit, <span class="at">test=</span><span class="st">"Chisq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Deviance Table
+
+Model: binomial, link: logit
+
+Response: PoorCare
+
+Terms added sequentially (first to last)
+
+                  Df Deviance Resid. Df Resid. Dev Pr(&gt;Chi)    
+NULL                                130     147.88             
+AcuteDrugGapSmall  1   23.336       129     124.54 1.36e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lmtest"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-5_058c67ad3663633b03c8ce52490243c4">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">waldtest</span>(QualityLogit, <span class="at">test=</span><span class="st">"Chisq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Wald test
+
+Model 1: PoorCare ~ AcuteDrugGapSmall
+Model 2: PoorCare ~ 1
+  Res.Df Df Chisq Pr(&gt;Chisq)    
+1    129                        
+2    130 -1 15.95  6.504e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<ul>
+<li><p>From this table we see that the Wald test shows that the coefficient of AcuteDrugSmallGap, i.e.&nbsp;<span class="math inline">\(\beta_1\)</span> is significantly different to 0. The Deviance statistic is also significant. Using the theory in the lecture notes we conclude that the model is: <span class="math display">\[
+logit(\hat{p})=-1.791+0.258x_1 \quad \text{or}\quad \hat{p}=\frac{e^{-1.791+0.258x_1}}{1+e^{-1.791+0.258x_1}},
+\]</span> where <span class="math inline">\(x_1\)</span> denotes AcuteDrugGapSmall and <span class="math inline">\(\hat{p}\)</span> is the estimated probability of receiving poor care. Note that the Fisher scoring iterations indicate how quickly the MLEs for the coefficients in the model converge.</p></li>
+<li><p>The following code provides <span class="math inline">\(e^\beta\)</span> along with a confidence interval for the coefficient, which helps our analysis</p></li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-6_35453f4f681f3492c5524c94b866aaa6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">cbind</span>(<span class="at">OR =</span> <span class="fu">coef</span>(QualityLogit), <span class="fu">confint</span>(QualityLogit)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                         OR      2.5 %    97.5 %
+(Intercept)       0.1668162 0.09262101 0.2818085
+AcuteDrugGapSmall 1.2938500 1.15026698 1.4848021</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Note that <span class="math inline">\(e^\beta=1.294\)</span>, indicating that increasing the independent variable, AcuteDrugsSmallGap, by 1 unit will increase the odds of PoorCare by 29.4%. The 95% confidence interval for <span class="math inline">\(e^\beta\)</span> is <span class="math inline">\((1.15,1.484)\)</span> - it is good that the confidence interval does not include 1, otherwise this would represent no change to the odds of the outcome.</p></li>
+<li><p>We next use the DescTools package to calculate some pseudo<span class="math inline">\(R^2\)</span> statistics.</p></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"DescTools"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-7_54fef2169e45dd7b70a838eea06f8ed3">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DescTools)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">PseudoR2</span>(QualityLogit, <span class="at">which=</span><span class="fu">c</span>(<span class="st">"CoxSnell"</span>, <span class="st">"Nagelkerke"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  CoxSnell Nagelkerke 
+ 0.1631750  0.2411715 </code></pre>
+</div>
+</div>
+<ul>
+<li><p>We see that Nagelkerke’s <span class="math inline">\(R^2\)</span> indicates that 24.1% of the variation in the outcome is accounted for by the model (Cox and Snell: 16.3%)</p></li>
+<li><p>Finally, we further evaluate the model using the Hosmer and Lemeshow test:</p></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"generalhoslem"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-8_c2d7a74034ca57b866f167f7c0d2b002">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(generalhoslem) </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">logitgof</span>(Quality<span class="sc">$</span>PoorCare, <span class="fu">fitted</span>(QualityLogit))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Hosmer and Lemeshow test (binary model)
+
+data:  Quality$PoorCare, fitted(QualityLogit)
+X-squared = 1.9916, df = 3, p-value = 0.5741</code></pre>
+</div>
+</div>
+<ul>
+<li><p>The Hosmer and Lemeshow test shows that we have a good model fit (not significant).</p></li>
+<li><p>We now include another independent variable, <strong>StartedOnCombination</strong>. As the new variable is categorical, we must inform R using the following code:</p></li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-9_a264ba93e78262e0425fd8a621770792">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Combination<span class="ot">&lt;-</span><span class="fu">factor</span>(Quality<span class="sc">$</span>StartedOnCombination)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>We now proceed with the model:</li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-10_f9548c0ba0802646f5d8886fadf383f5">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>QualityLogit2<span class="ot">&lt;-</span><span class="fu">glm</span>(PoorCare<span class="sc">~</span>AcuteDrugGapSmall<span class="sc">+</span>Combination, <span class="at">data=</span>Quality, <span class="at">family=</span><span class="st">"binomial"</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(QualityLogit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = PoorCare ~ AcuteDrugGapSmall + Combination, family = "binomial", 
+    data = Quality)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9085  -0.5564  -0.4868  -0.2433   2.0937  
+
+Coefficients:
+                  Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)       -2.07335    0.31625  -6.556 5.52e-11 ***
+AcuteDrugGapSmall  0.28600    0.06911   4.138 3.50e-05 ***
+Combination1       3.43061    1.15381   2.973  0.00295 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 147.88  on 130  degrees of freedom
+Residual deviance: 112.25  on 128  degrees of freedom
+AIC: 118.25
+
+Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Note that the Fisher scoring iterations indicate how quickly the MLEs for the coefficients in the model converge.</p></li>
+<li><p>Again we begin to evaluate the model using:</p></li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-11_0031eaf72ce06436d392fb6c2689746f">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(QualityLogit2, <span class="at">test=</span><span class="st">"Chisq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Analysis of Deviance Table
+
+Model: binomial, link: logit
+
+Response: PoorCare
+
+Terms added sequentially (first to last)
+
+                  Df Deviance Resid. Df Resid. Dev  Pr(&gt;Chi)    
+NULL                                130     147.88              
+AcuteDrugGapSmall  1   23.336       129     124.54  1.36e-06 ***
+Combination        1   12.293       128     112.25 0.0004545 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">waldtest</span>(QualityLogit2, <span class="at">test=</span><span class="st">"Chisq"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Wald test
+
+Model 1: PoorCare ~ AcuteDrugGapSmall + Combination
+Model 2: PoorCare ~ 1
+  Res.Df Df  Chisq Pr(&gt;Chisq)    
+1    128                         
+2    130 -2 22.791  1.125e-05 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<ul>
+<li><p>We see that the Wald test shows that the coefficients of both independent variables i.e.&nbsp;<span class="math inline">\(\beta_1\)</span> and <span class="math inline">\(\beta_2\)</span> are significantly different to 0. The Deviance statistic is also significant.</p></li>
+<li><p>We conclude that including the variable AcuteDrugGapSmall in logistic regression significantly improves the model and also that including both AcuteDrugGapSmall and StartedOnCombination significantly improves the model even further. Therefore, the model in this case is: <span class="math display">\[
+logit(\hat{p})=-2.073+0.286x_1+3.431x_2  \quad \text{or}\quad \hat{p}=\frac{e^{-2.073+0.286x_1+3.431x_2  }}{1+e^{-2.073+0.286x_1+3.431x_2 }},
+\]</span> where <span class="math inline">\(x_1\)</span> denotes AcuteDrugGapSmall, <span class="math inline">\(x_2\)</span> denotes StartedOnCombination and <span class="math inline">\(\hat{p}\)</span> is the estimated probability of receiving poor care.</p></li>
+<li><p>As we will now have two independent variables we must check for no multicollinearity using the following R code:</p></li>
+</ul>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"car"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-12_b62bb706621ee08fb5771cb8ba030e4c">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">vif</span>(QualityLogit2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>AcuteDrugGapSmall       Combination 
+         1.022965          1.022965 </code></pre>
+</div>
+</div>
+<ul>
+<li><p>We see from the above table that both the VIF terms are around 1, satisfying the no-multicollinearity assumption - we require the VIF factors to be around 1, or at least <span class="math inline">\(0.01&lt;VIF&lt;5\)</span>.</p></li>
+<li><p>The following code provides <span class="math inline">\(e^\beta\)</span> along with a confidence interval for the coefficient, which helps our analysis</p></li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-13_af5fa8829e04ed15c9b8f739b951326a">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">cbind</span>(<span class="at">OR =</span> <span class="fu">coef</span>(QualityLogit2), <span class="fu">confint</span>(QualityLogit2)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                          OR      2.5 %      97.5 %
+(Intercept)        0.1257643 0.06450324   0.2248477
+AcuteDrugGapSmall  1.3310961 1.17478068   1.5444554
+Combination1      30.8956101 4.27766048 629.2075641</code></pre>
+</div>
+</div>
+<ul>
+<li><p>Neither confidence interval our predictor variables for <span class="math inline">\(e^\beta\)</span> includes 1.</p></li>
+<li><p>We next use the DescTools package to calculate some pseudo<span class="math inline">\(R^2\)</span> statistics.</p></li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-14_b238e7c1ca799ee671a39236e1bac7cb">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">PseudoR2</span>(QualityLogit2, <span class="at">which=</span><span class="fu">c</span>(<span class="st">"CoxSnell"</span>, <span class="st">"Nagelkerke"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  CoxSnell Nagelkerke 
+ 0.2381334  0.3519595 </code></pre>
+</div>
+</div>
+<ul>
+<li><p>We see that Nagelkerke’s <span class="math inline">\(R^2\)</span> indicates that 35.2% of the variation in the outcome is accounted for by the model (Cox and Snell: 23.8%)</p></li>
+<li><p>Finally, we further evaluate the model using the Hosmer and Lemeshow test:</p></li>
+</ul>
+<div class="cell" data-hash="MA-292-lab-8-site_cache/html/unnamed-chunk-15_7c184fbc6a292b1d3be44bf2e675c994">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">logitgof</span>(Quality<span class="sc">$</span>PoorCare, <span class="fu">fitted</span>(QualityLogit2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Hosmer and Lemeshow test (binary model)
+
+data:  Quality$PoorCare, fitted(QualityLogit2)
+X-squared = 0.70579, df = 4, p-value = 0.9506</code></pre>
+</div>
+</div>
+<ul>
+<li>The Hosmer and Lemeshow test shows that we have a good model fit (not significant).</li>
+</ul>
+</section>
+<section id="exercise-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exercise-2">Exercise 2</h3>
+<p>Investigate the <strong>Penalty</strong> dataset to determine whether a logistic regression model may be used to predict the variable <strong>Scored</strong> from the three variables <strong>PSWQ</strong>, <strong>Anxious</strong> and <strong>Previous</strong>.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./MA-292 lab 7 site.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lab 7 - Problems</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2024, Kristian Evans</div>   
+    <div class="nav-footer-center">MA-292: Lab Assignments</div>
+    <div class="nav-footer-right">This page is built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>
